@@ -41,4 +41,4 @@ who notarized the installer, and prove the I2P router was not tampered with.
 
 You'll be able to tell I2P is running when an I2P Icon appears in your Dock.
 
- - [For information on notarizing Apple software, go here](https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution)
+ - [For info on notarizing Apple software, go here](https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution)
