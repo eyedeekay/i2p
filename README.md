@@ -1,6 +1,6 @@
 # Experimental Jpackaged I2P Installers
 
-![Experimental Installers](expinstallers.png)
+![Experimental Installers](installers.png)
 Traditionally, I2P runs using a Java Runtime Environment which exists on
 the host machine. This requirement adds a series of "Extra" steps to
 install I2P on most platforms. With these installers, I2P comes with a
