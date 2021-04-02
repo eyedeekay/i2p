@@ -32,7 +32,7 @@ IzPack, you will see two I2P routers in your Applications Directory.
 This is usable, but you should only run one router at a time. They will
 both use the same Application Directory.
 
- - [For more informmation about other I2P installers for Mac, go here](https://geti2p.net/en/download)
+ - [For more info about other I2P installers for Mac, go here](https://geti2p.net/en/download)
 
 ## **Step Four:** Complete Installation
 
