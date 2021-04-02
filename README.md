@@ -42,6 +42,8 @@ will start and Firefox will launch configured for I2P.
 If you are using Mac OSX, the .dmg file is a normal Mac application image.
 Install it just like any other Mac application.
 
+- [The whole install process on OSX](osx.html)
+
 ### Downloads:
 
  - [Windows All-in-One Installer](https://github.com/eyedeekay/i2p.firefox/releases/tag/v0.3-0.9.49-jpackage) Github Release
