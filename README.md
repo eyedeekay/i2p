@@ -30,7 +30,7 @@ the wiki pages below.
 
 ### Windows 10
 
-**[Install Firefox First](https://www.mozilla.org/en-US/firefox/windows/)**
+ - **[Install Firefox First](https://www.mozilla.org/en-US/firefox/windows/)**
 
 If you have Firefox installed on your Windows 10 PC, you can simply
 download the Github Release of the All-in-One-Installer.exe below. Double
