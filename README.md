@@ -53,3 +53,5 @@ Install it just like any other Mac application.
 
  - [Windows All-in-One Installer](https://i2pgit.org/i2p-hackers/i2p.firefox/) Gitlab Repository on i2pgit.org
  - [Mac OSX .dmg Installer](https://i2pgit.org/i2p-hackers/i2p-jpackage-mac/) Gitlab Repository on i2pgit.org
+
+<sub>[Imagery was created by I2P Contributor Sadie](https://i2p.medium.com/workflows-and-experimental-installers-b32ba7255ed5)</sub>

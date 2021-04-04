@@ -355,3 +355,7 @@ img.readyness {
     font-size: 10.5pt;
   }
 }
+
+sub {
+  float: right;
+}
