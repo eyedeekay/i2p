@@ -21,7 +21,8 @@ and a few other little things. You can find out more about development at
 the wiki pages below.
 
 **If you choose to install this software you will need to manually update**
-**it once at a future date. Automatic updates are not available at this time.**
+**it at least once at a future date. Automatic updates are not available at**
+**this time.**
 
 ### Wiki Pages:
 
