@@ -29,13 +29,16 @@ osx:
 
 README:
 
-update: new
+update: latest new
+
+latest:
 	gothub delete -u eyedeekay -r i2p -t $(LATEST_VERSION); true
 	gothub release -p -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "Update Packages for `date`" -d "I2P+Jpackage Updates for `date`"; true
-	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "i2pwinupdate.su3" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).su3"
 	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "I2P-Profile-Installer.exe" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).exe"
+	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "i2pwinupdate.su3" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).su3"
 
 new:
 	gothub release -p -u eyedeekay -r i2p -t $(VERSION) -n "Update Packages for `date`" -d "I2P+Jpackage Updates for `date`"; true
-	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "i2pwinupdate.su3" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).su3"
 	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-Profile-Installer.exe" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).exe"
+	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "i2pwinupdate.su3" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).su3"
+
