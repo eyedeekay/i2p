@@ -47,7 +47,8 @@ Install it just like any other Mac application.
 
 ### Downloads:
 
- - [Windows All-in-One Installer](https://github.com/eyedeekay/i2p.firefox/releases/tag/v4-0.4-0.9.50) Github Release
+ - [Windows All-in-One Installer](https://github.com/eyedeekay/i2p/releases/tag/latest) (Github Release)
+ - [Windows All-in-One Installer](http://nredpqdimaifunjvgmegejjbcgolzup6ryregdyxkvga2el4wgvq.b32.i2p/I2P-Profile-Installer.exe) (Download Inside I2P)
  - [Mac OSX .dmg Installer](https://muwire.com/downloads/I2P-0.9.49-10.dmg) Direct Download
 
 ### Source Code:
