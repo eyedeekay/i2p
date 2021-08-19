@@ -1,4 +1,8 @@
 
+VERSION=`date +%m%d%y`
+AIO_VERSION="0.04.0"
+LATEST_VERSION=latest
+
 index: README osx
 	@echo "<!DOCTYPE html>" > index.html
 	@echo "<html>" >> index.html
@@ -24,3 +28,12 @@ osx:
 	@echo "</html>" >> osx.html
 
 README:
+
+update: new
+	gothub release -p -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "Update Packages for `date`" -d "I2P+Jpackage Updates for `date`"; true
+	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "i2pwinupdate.su3" -f "I2P-Profile-Installer-$(AIO_VERSION).su3"
+
+new:
+	gothub release -p -u eyedeekay -r i2p -t $(VERSION) -n "Update Packages for `date`" -d "I2P+Jpackage Updates for `date`"; true
+	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "i2pwinupdate.su3" -f "I2P-Profile-Installer-$(AIO_VERSION).su3"
+	
