@@ -4,6 +4,12 @@ cd $dir
 git pull
 make
 rm -f i2pwinupdate.su3*
-rm -f I2P-Profile-Installer.exe
+rm -f I2P-Profile-Installer.exe*
+rm -f I2P-Profile.tgz*
+rm -f I2P-App-Profile.tgz*
+
 wget https://github.com/eyedeekay/i2p/releases/download/latest/i2pwinupdate.su3
 wget https://github.com/eyedeekay/i2p/releases/download/latest/I2P-Profile-Installer.exe
+
+wget https://github.com/eyedeekay/i2p/releases/download/latest/I2P-Profile.tgz
+wget https://github.com/eyedeekay/i2p/releases/download/latest/I2P-App-Profile.tgz

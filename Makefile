@@ -34,16 +34,39 @@ osx:
 
 README:
 
-update: latest new
+
+##==------------------------------------------------------------------------==##
+#    IMPORTANT! Before you run these targets, ensure that ~/i2p.firefox is     #
+#     synced with the i2p.firefox build directory on your Windows build        #
+#     environment.                                                             #
+##==------------------------------------------------------------------------==##
+
+update: latest-version version
+
+latest-version: latest upload-linux upload-windows 
+
+version: new upload-linux-new upload-windows-new
 
 latest:
 	gothub delete -u eyedeekay -r i2p -t $(LATEST_VERSION); true
 	gothub release -p -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "Update Packages for `date`" -d "I2P+Jpackage Updates for `date`"; true
+
+upload-linux:
+	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "I2P-Profile.tgz" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/profile-$(AIO_VERSION).tgz"
+	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "I2P-App-Profile.tgz" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/app-profile-$(AIO_VERSION).tgz"
+
+upload-windows:
 	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "I2P-Profile-Installer.exe" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).exe"
 	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "i2pwinupdate.su3" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).su3"
 
 new:
 	gothub release -p -u eyedeekay -r i2p -t $(VERSION) -n "Update Packages for `date`" -d "I2P+Jpackage Updates for `date`"; true
+
+upload-linux-new:
+	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-Profile.tgz" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/profile-$(AIO_VERSION).tgz"
+	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-App-Profile.tgz" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/app-profile-$(AIO_VERSION).tgz"
+
+upload-windows-new:
 	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-Profile-Installer.exe" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).exe"
 	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "i2pwinupdate.su3" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).su3"
 
