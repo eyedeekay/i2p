@@ -20,9 +20,10 @@ that we can update the I2P router it installs at update time correctly,
 and a few other little things. You can find out more about development at
 the wiki pages below.
 
-**If you choose to install this software you will need to manually update**
-**it at least once at a future date. Automatic updates are not available at**
-**this time.**
+**UPDATES ARE LIVE! In theory at least. Keep in mind this is still**
+**experimental software. If you are using an old version of the All-In-One**
+**bundle, you should uninstall the old bundle using the uninstaller, and**
+**install the latest release.**
 
 ### Wiki Pages:
 
