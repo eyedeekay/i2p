@@ -8,7 +8,10 @@ samhost=localhost
 samport=7656
 eephttpd=eephttpd-jpackage
 
-index: README osx
+version-sh:
+	echo VERSION=$(AIO_VERSION) > version.sh
+
+index: version-sh README osx
 	@echo "<!DOCTYPE html>" > index.html
 	@echo "<html>" >> index.html
 	@echo "<head>" >> index.html
@@ -41,11 +44,11 @@ README:
 #     environment.                                                             #
 ##==------------------------------------------------------------------------==##
 
-update: latest-version version
+update: version-sh latest-version version
 
-latest-version: latest upload-linux upload-windows 
+latest-version: version-sh latest upload-linux upload-windows 
 
-version: new upload-linux-new upload-windows-new
+version: version-sh new upload-linux-new upload-windows-new
 
 latest:
 	gothub delete -u eyedeekay -r i2p -t $(LATEST_VERSION); true
@@ -67,6 +70,8 @@ sums:
 upload-windows:
 	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "I2P-Profile-Installer-unsigned.exe" -l "$(lexesum)" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).exe"
 	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "I2P-Profile-Installer.exe" -l "$(lexesumsigned)" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION)-signed.exe"
+	
+upload-windows-su3:
 	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "i2pwinupdate.su3" -l "$(lsu3sum)" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION)-signed.su3"
 
 new:
@@ -79,6 +84,8 @@ upload-linux-new:
 upload-windows-new:
 	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-Profile-Installer-unsigned.exe" -l "$(lexesum)" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).exe"
 	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-Profile-Installer.exe" -l "$(lexesumsigned)" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION)-signed.exe"
+
+upload-windows-su3-new:
 	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "i2pwinupdate.su3" -l "$(lsu3sum)" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION)-signed.su3"
 
 run:
