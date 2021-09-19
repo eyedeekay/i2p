@@ -3,7 +3,7 @@ VERSION=`date +%m%d%y`
 AIO_VERSION="1.05.0"
 LATEST_VERSION=latest
 
-args="-r -p 7672 -n eephttpd-jpackage"
+args="-r -p 7673 -n eephttpd-jpackage"
 samhost=localhost
 samport=7656
 eephttpd=eephttpd-jpackage
