@@ -24,6 +24,7 @@ wget https://github.com/eyedeekay/i2p/releases/download/latest/I2P-App-Profile.t
 
 mkdir -p "$HOME/eephttpd-jpackage-data"
 chown -R 1000:1000 "$HOME/eephttpd-jpackage-data"
+docker pull eyedeekay/eephttpd
 docker rm -f eephttpd-jpackage; true
 docker run -i -t -d \
 	--env samhost="localhost" \
