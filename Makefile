@@ -1,6 +1,6 @@
 
 VERSION=`date +%m%d%y`
-AIO_VERSION="1.05.1"
+AIO_VERSION="1.05.0"
 LATEST_VERSION=latest
 
 args="-r -p 7673 -n eephttpd-jpackage"
@@ -55,12 +55,16 @@ latest:
 	gothub release -p -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "Update Packages for `date`" -d "I2P+Jpackage Updates for `date`"; true
 
 upload-linux:
-	#gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "I2P-Profile.tgz" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/profile-$(AIO_VERSION).tgz"
-	#gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "I2P-App-Profile.tgz" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/app-profile-$(AIO_VERSION).tgz"
+	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "I2P-Profile.tgz" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/profile-$(AIO_VERSION).tgz"
+	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "I2P-App-Profile.tgz" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/app-profile-$(AIO_VERSION).tgz"
+
+upload-debuntu:
+	gothub upload -R -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "i2p-firefox_$(AIO_VERSION)-1_amd64.deb" -l "$(debsum)" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/i2p-firefox_$(AIO_VERSION)-1_amd64.deb"
 
 lexesum=`sha256sum "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).exe" | sed "s|$(HOME)||g"`
 lexesumsigned=`sha256sum "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION)-signed.exe" | sed "s|$(HOME)||g"`
 lsu3sum=`sha256sum "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION)-signed.su3" | sed "s|$(HOME)||g"`
+debsum=`sha256sum "$(HOME)/Workspace/GIT_WORK/i2p.firefox/i2p-firefox_$(AIO_VERSION)-1_amd64.deb" | sed "s|$(HOME)||g"`
 
 sums:
 	@echo "$(lexesum)"
@@ -78,8 +82,11 @@ new:
 	gothub release -p -u eyedeekay -r i2p -t $(VERSION) -n "Update Packages for `date`" -d "I2P+Jpackage Updates for `date`"; true
 
 upload-linux-new:
-	#gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-Profile.tgz" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/profile-$(AIO_VERSION).tgz"
-	#gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-App-Profile.tgz" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/app-profile-$(AIO_VERSION).tgz"
+	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-Profile.tgz" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/profile-$(AIO_VERSION).tgz"
+	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-App-Profile.tgz" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/app-profile-$(AIO_VERSION).tgz"
+
+upload-debuntu-new:
+	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "i2p-firefox_$(AIO_VERSION)-1_amd64.deb" -l "$(debsum)" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/i2p-firefox_$(AIO_VERSION)-1_amd64.deb"
 
 upload-windows-new:
 	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-Profile-Installer-unsigned.exe" -l "$(lexesum)" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).exe"

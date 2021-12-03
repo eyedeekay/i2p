@@ -15,6 +15,7 @@ rm -f I2P-App-Profile.tgz*
 
 wget -O i2pwinupdate-"$VERSION"-signed.su3 https://github.com/eyedeekay/i2p/releases/download/latest/i2pwinupdate.su3
 wget -O I2P-Profile-Installer-"$VERSION"-signed.exe https://github.com/eyedeekay/i2p/releases/download/latest/I2P-Profile-Installer.exe
+wget -O i2p-firefox_"$VERSION"-1_amd64.deb https://github.com/eyedeekay/i2p/releases/download/latest/i2p-firefox_1.05.0-1_amd64.deb
 
 cp i2pwinupdate-"$VERSION"-signed.su3 i2pwinupdate.su3
 cp I2P-Profile-Installer-"$VERSION"-signed.exe I2P-Profile-Installer.exe
