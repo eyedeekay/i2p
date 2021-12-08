@@ -50,6 +50,8 @@ latest-version: version-sh latest upload-linux upload-windows
 
 version: version-sh new upload-linux-new upload-windows-new
 
+version-signed: upload-windows-signed upload-windows-new-signed
+
 latest:
 	gothub delete -u eyedeekay -r i2p -t $(LATEST_VERSION); true
 	gothub release -p -u eyedeekay -r i2p -t $(LATEST_VERSION) -n "Update Packages for `date`" -d "I2P+Jpackage Updates for `date`"; true
