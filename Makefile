@@ -1,6 +1,6 @@
 
 VERSION=`date +%m%d%y`
-AIO_VERSION="1.05.0"
+AIO_VERSION="1.06.0"
 LATEST_VERSION=latest
 
 args="-r -p 7673 -n eephttpd-jpackage"
