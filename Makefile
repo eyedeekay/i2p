@@ -1,6 +1,6 @@
 
 VERSION=`date +%m%d%y`
-AIO_VERSION="1.06.0"
+AIO_VERSION="1.06.1"
 LATEST_VERSION=latest
 
 args="-r -p 7673 -n eephttpd-jpackage"
@@ -89,7 +89,7 @@ upload-debuntu-new:
 	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "i2p-firefox_$(AIO_VERSION)-1_amd64.deb" -l "$(debsum)" -f "$(HOME)/Workspace/GIT_WORK/i2p.firefox/i2p-firefox_$(AIO_VERSION)-1_amd64.deb"
 
 upload-windows-new:
-	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-Profile-Installer-unsigned.exe" -l "$(lexesum)" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).exe"
+	#gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-Profile-Installer-unsigned.exe" -l "$(lexesum)" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION).exe"
 
 upload-windows-new-signed:	
 	gothub upload -R -u eyedeekay -r i2p -t $(VERSION) -n "I2P-Profile-Installer.exe" -l "$(lexesumsigned)" -f "$(HOME)/i2p.firefox/I2P-Profile-Installer-$(AIO_VERSION)-signed.exe"
